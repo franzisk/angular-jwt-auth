@@ -1,0 +1,35 @@
+<div class="login">
+  <div class="login-triangle"></div>
+  <h2 class="login-header">Login</h2>
+
+  <form [formGroup]="loginForm" class="form-login" (ngSubmit)="submitLogin()">
+
+    <!-- Username field -->
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.username.errors }">
+      <input type="email" placeholder="Email" formControlName="username" [(ngModel)]="user.username">
+    </p>
+
+    <!-- Error messages for username field -->
+    <div *ngIf="!formControls.username.valid && formControls.username.dirty" class="help-block">
+      <div *ngIf="formControls.username.errors.required">The email is required</div>
+      <div *ngIf="formControls.username.errors.email">Please, enter a valid email address</div>
+    </div>
+
+    <!-- Password field -->
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+      <input type="password" placeholder="Password" formControlName="password" [(ngModel)]="user.password">
+    </p>
+
+    <!-- Error messages for password field -->
+    <div *ngIf="!formControls.password.valid && formControls.password.dirty" class="help-block">
+      <div *ngIf="formControls.password.errors.required">A password is requited</div>
+    </div>
+
+    <!-- Authentication button -->
+    <p style="margin-top:10px;">
+      <input type="submit" value="Authenticate">
+    </p>
+  </form>
+
+
+</div>

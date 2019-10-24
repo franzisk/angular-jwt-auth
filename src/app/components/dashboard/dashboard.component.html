@@ -1,0 +1,20 @@
+<p>
+  Hello <b>{{userData.fullName}}</b>!!!
+</p>
+<p>
+  This is the protected dashboard page!
+</p>
+
+<p>
+  If you can see the content of this page it's because you certainly authenticated with a JWT token.
+</p>
+
+<p>
+  We also have an example of a public access page, no need to authenticate to access <a routerLink="/public">this page
+    here</a>
+</p>
+
+<p>
+  If you wish to <u><b>log out</b></u> please <a href="javascript:void(0)" (click)="executeLogout()"><b>click
+      here</b></a> !
+</p>

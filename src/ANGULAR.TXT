@@ -1,0 +1,5 @@
+// creates a guard
+> ng g guard guards/auth/auth
+
+// creates a service
+> ng g service services/auth/auth
